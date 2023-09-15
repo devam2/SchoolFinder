@@ -102,7 +102,7 @@
             /* padding: 20px; */
             margin-bottom: 20px;
             margin: 20px;
-            width: 300px;
+            width: 400px;
             border: solid black 1px;
             background: #FFF;
             box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.25);
@@ -117,12 +117,17 @@
             padding-top: 10px;
             /* padding-left: 10px; */
         }
+        .texting{
+            width: 100%;
+            height: 30px;
+            border: solid green 1px;
+        }
         .fa-solid fa-location-arrow{
             float: left;
             padding-top: 10px;
-        }.first h5{
+        }.texting h5{
              float: right;
-             padding-left: 10px;
+
          }
         .second h5{
             float: right;
@@ -135,7 +140,7 @@
 
         .small{
             height: 200px;
-            width: 300px;
+            width: 400px;
             border: solid black 1px;
             margin-top: 10px;
         }
@@ -147,6 +152,7 @@
         .size,.size1,.size2{
             height: 60px;
             width: 100%;
+            padding-right: 30px;
             /* border: solid black 1px; */
             display: flex;
             justify-content: space-between;
@@ -165,15 +171,28 @@
             width: 100px;
             height: 40px;
             /* border: solid red 1px; */
-            margin: 20px;
+            /*margin: 20px;*/
+            margin-top: 20px;
+            margin-right: 30PX;
             border-radius: 12px;
         }
         .one,.two h4{
             text-align: left;
         }
+        .one,.two h5{
+            text-align: left;
+        }
+        .f1{
+            margin-top: 25px;
+            border: solid red 1px;
+            width: 100px;
+            height: 30px;
+            border-radius: 12px;
+            margin-left: 250px;
+        }
         .f1 h6{
             text-align: left;
-            padding-top: 10px;
+            padding-top: 20px;
             padding-left: 20px;
             padding-top: 10px;
         }
@@ -230,15 +249,18 @@
                 String type = (String) collegeDetails.get("Type");
                 String admissionDeadline = (String) collegeDetails.get("Admission_Deadline");
         %>
-        <div class="first">
+        <div class="first" style="height: auto;">
             <div class="small">
-                <img src="./images/VirnchiCollege.jpeg"  style="height: 200px; width: 300px;" >
+                <img src="./images/VirnchiCollege.jpeg"  style="height: 200px; width: 400px;" >
 <%--                <img src="data:image/jpeg;base64," >--%>
             </div>
             <div class="text"><h1><%=fee%></h1></div>
             <h3><%= name%></h3>
             <br>
-            <i class="fa-solid fa-location-arrow"><h5><%= location%></h5></i>
+            <div class="texting" style="display:flex;justify-content:flex-start;">
+            <i class="fa-solid fa-location-arrow" style="margin-right:10px"></i>
+                <h5 style=""><%= location%></h5>
+            </div>
 
             <p></p>
             <div class="size">
@@ -250,8 +272,8 @@
                 <div class="two"><h4>Seat<%=seat%></h4></div>
             </div>
             <div class="size2">
-                <div class="one"><h4>Admission-Date:<%=admissionDate%></h4></div>
-                <div class="two"><h4>Admission-Deadline:<%=admissionDeadline%></h4></div>
+                <div class="one"><h4>Admission-Date:</h4><h5><%=admissionDate%></h5></div>
+                <div class="two"><h4>Admission-Deadline:</h4><h5><%=admissionDeadline%></h5></div>
             </div>
             <div class="f1">
                 <a href=""><h6>Register Now +</h6></a>
@@ -307,7 +329,6 @@
 <%--            <div class="f1">--%>
 <%--                <a href=""><h6>Register Now +</h6></a>--%>
 <%--            </div>--%>
-        <h1><%= id%></h1>
         <% } %>
         </div>
     </div>
