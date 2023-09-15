@@ -621,9 +621,16 @@
             <th>id</th>
             <th>Student Name</th>
             <th>Email</th>
-            <th>Password</th>
+            <th>School Name</th>
+            <th>Address</th>
+            <th>Edu-lvl</th>
+            <th>Passed Year</th>
+            <th>marks</th>
+            <th>new School</th>
+            <th>Faculty</th>
+            <th>level</th>
 
-            <th>Actions</th>
+<%--            <th>Actions</th>--%>
           </tr>
           </thead>
           <tbody>
@@ -637,11 +644,18 @@
             <td>  <%=sn%>.</td>
             <td>  <%=student.getUserName()%></td>
             <td>  <%=student.getEmail()%></td>
-            <td>  <%=student.getPassword()%></td>
-            <td>
-              <a href="admin?action=deleteUser&id=<%=student.getId()%>"><span class="material-symbols-outlined">delete</span></a>
-<%--              <a href="admin?action=editdetails&id=<%=student.getId()%>"> <span class="material-symbols-outlined">upgrade</span></a>--%>
-            </td>
+            <td>  <%=student.getSchoolname()%></td>
+            <td>  <%=student.getAddress()%></td>
+            <td>  <%=student.getEducationlvl()%></td>
+            <td>  <%=student.getPassedouyear()%></td>
+            <td>  <%=student.getMarks()%></td>
+            <td>  <%=student.getNewschoolName()%></td>
+            <td>  <%=student.getFaculty()%></td>
+            <td>  <%=student.getLevel()%></td>
+<%--            <td>--%>
+<%--              <a href="admin?action=deleteUser&id=<%=student.getId()%>"><span class="material-symbols-outlined">delete</span></a>--%>
+<%--&lt;%&ndash;              <a href="admin?action=editdetails&id=<%=student.getId()%>"> <span class="material-symbols-outlined">upgrade</span></a>&ndash;%&gt;--%>
+<%--            </td>--%>
 
           </tr>
 

@@ -2,6 +2,8 @@ package Service;
 
 import DBConnection.DBConnection;
 import Model.Student;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,10 +11,7 @@ import java.nio.file.Files;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class UserService {
 
@@ -350,13 +349,13 @@ public class UserService {
     // this code updates the seat number each time a new registrtaion is made
     public void newSeat(int id, int newseat) throws SQLException {
         // Define the SQL query to update the record with the given ID
-        String query = "UPDATE college SET Seat WHERE id=?";
+        String query = "UPDATE college SET Seat = ? WHERE id = ?";
 
         try (PreparedStatement pstm = new DBConnection().getStatement(query)) {
 
             // Set the parameters for the query
             pstm.setInt(1, newseat);
-
+            pstm.setInt(2, id);
 
             // Execute the update
             pstm.executeUpdate();
@@ -365,5 +364,97 @@ public class UserService {
 
 
 //------------------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+    //This is the method for sorting by username
+//    public static List<Student> sortcollege(String location) {
+//        List<Student> searchResults = new ArrayList<>();
+//        String sql = "SELECT * FROM college WHERE Location LIKE ?";
+//        try (PreparedStatement ps = new DBConnection().getStatement(sql)) {
+//            ps.setString(1, "%" + location + "%");
+//            try (ResultSet rs = ps.executeQuery()) {
+//                while (rs.next()) {
+//                    Student student = new Student();
+//                    student.setId(rs.getInt("bid"));
+//                    student.setTitle(rs.getString("btitle"));
+//                    student.setAuthor(rs.getString("bauthor"));
+//                    student.setIsbn(rs.getString("bisbn"));
+//                    student.setPublisher(rs.getString("bpublisher"));
+//                    student.setGenre(rs.getString("bgenre"));
+//                    student.setLanguage(rs.getString("blanguage"));
+//                    student.setPages(rs.getString("bpages"));
+//                    student.setLocation(rs.getString("blocation"));
+//                    student.setSynopsis(rs.getString("bsynopsis"));
+//                    student.setImage(rs.getString("bimage"));
+//                    student.setStatus(rs.getString("status"));
+//                    searchResults.add(student);
+//                }
+//            }
+//        } catch (SQLException ex) {
+//            System.out.println(ex);
+//        }
+//        return searchResults;
+//    }
+
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+
+     // to change password
+    public Student changePassword(Student student, String email) {
+        String query = "UPDATE user SET password = ? WHERE email = ?";
+        PreparedStatement ps = new DBConnection().getStatement(query);
+        try {
+            ps.setString(2, email);
+            ps.setString(1, student.getNewpassword());
+            ps.executeUpdate();
+            System.out.println(ps);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return student;
+    }
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+     // to change college by location
+     public List<Student> getBookListbyNew() {
+         System.out.println("getBookListbyNew");
+         List<Student> bookLists = new ArrayList<>();
+         String query = "select * from college Where Location = 'katmandu';";
+         System.out.println(query);
+         PreparedStatement pstm = new DBConnection().getStatement(query);
+         try {
+             ResultSet rs = pstm.executeQuery();
+             while (rs.next()) {
+                 Student student = new Student();
+                 student.setId(rs.getInt("id"));
+                 student.setSchoolname(rs.getString("Name"));
+                 student.setLocation(rs.getString("Location"));
+                 student.setFee(rs.getString("Fee"));
+                 student.setSeat(rs.getInt("Seat"));
+                 student.setScholarship(rs.getString("Scholarship"));
+                 student.setLevel(rs.getString("Level"));
+                 student.setFaculty(rs.getString("Faculty"));
+                 student.setAdmissiondate(rs.getString("Admission_Date"));
+                 student.setAdmissiondeadline(rs.getString("Admission_Deadline"));
+                 student.setType(rs.getString("Type"));
+                 bookLists.add(student);
+             }
+             System.out.println("bookList.size()" + bookLists.size());
+         } catch (SQLException e) {
+             e.printStackTrace();
+         }
+         return bookLists;
+     }
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 
 }

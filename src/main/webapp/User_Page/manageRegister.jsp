@@ -558,25 +558,18 @@
 
     <div class="menu-items">
       <ul class="nav-links">
-        <li><a href="admin?action=home">
+        <li><a href="user?page=home">
           <i class="uil uil-estate"></i>
           <span class="link-name">Dashboard</span>
         </a></li>
-        <li><a href="admin?action=gotoregister">
-          <i class="uil uil-files-landscapes"></i>
-          <span class="link-name">Register School/College</span>
-        </a></li>
-        <li><a href="admin?action=manageschool">
+        <li><a href="user?page=manageregister">
           <i class="uil uil-chart"></i>
-          <span class="link-name">Manage School/College</span>
-        </a></li>    <li><a href="admin?action=listuser">
-        <i class="uil uil-chart"></i>
-        <span class="link-name">Manage Users</span>
-      </a></li>
-        <li><a href="admin?action=changepassword">
-          <i class="uil uil-chart"></i>
-          <span class="link-name">Change Password</span>
-        </a></li>
+          <span class="link-name">Manage Register</span>
+
+          <li><a href="user?page=changepassword">
+            <i class="uil uil-chart"></i>
+            <span class="link-name">Change Password</span>
+          </a></li>
 
       </ul>
 

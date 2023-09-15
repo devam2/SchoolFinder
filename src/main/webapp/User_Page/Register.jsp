@@ -36,7 +36,7 @@
 <div class="section log-in">
     <div>
         <div class="login-form w-form">
-            <form action="user?page=Register" method="post" id="email-form" name="email-form" data-name="Email Form" class="login-form-container"><a href="/"
+            <form action="user?page=Register" method="post" id="email-form" name="email-form" data-name="Email Form" class="login-form-container"><a href="user?page=index"
                                                                                                            class="utility-go-home-button">Go home</a>
                 <h1 class="log-in-h1">Register</h1><a
                         href="https://university.webflow.com/integrations-type/memberships" target="_blank"

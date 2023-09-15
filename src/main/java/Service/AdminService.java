@@ -273,15 +273,21 @@ public class AdminService {
         List<Student> bookingDetails = new ArrayList<>();
         try {
             DBConnection db = new DBConnection();
-            PreparedStatement pstn = db.getStatement("SELECT * FROM user");
+            PreparedStatement pstn = db.getStatement("SELECT * FROM book");
             ResultSet rs = pstn.executeQuery();
             while (rs.next()) {
                 Student student = new Student();
                 student.setId(rs.getInt("id"));
                 student.setUserName(rs.getString("Name"));
+                student.setSchoolname(rs.getString("Schoolname"));
                 student.setEmail(rs.getString("email"));
-                student.setPassedouyear(rs.getString("Password"));
-
+                student.setAddress(rs.getString("Address"));
+                student.setEducationlvl(rs.getString("Educationlvl"));
+                student.setPassedouyear(rs.getString("paasedoutyear"));
+                student.setMarks(rs.getString("marks"));
+                student.setNewschoolName(rs.getString("newSchoolName"));
+                student.setFaculty(rs.getString("faculty"));
+                student.setLevel(rs.getString("level"));
                 bookingDetails.add(student);
             }
         } catch (SQLException e) {
@@ -299,7 +305,7 @@ public class AdminService {
 
     // to change password
     public Student changePassword(Student student, String email) {
-        String query = "UPDATE user SET password = ? WHERE email = ?";
+        String query = "UPDATE adminlogin SET password = ? WHERE email = ?";
         PreparedStatement ps = new DBConnection().getStatement(query);
         try {
             ps.setString(2, email);

@@ -5,7 +5,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
-<!-- This site was created in Webflow. https://www.webflow.com --><!-- Last Published: Tue Jul 06 2021 10:30:50 GMT+0000 (Coordinated Universal Time) -->
+
 <html data-wf-domain="staycations.webflow.io" data-wf-page="602e6eb1f1736b385e175fca"
       data-wf-site="602e6eb1f1736b540d175fc9">
 
@@ -29,6 +29,7 @@
     <meta content="Webflow" name="generator" />
     <link href="https://assets.website-files.com/602e6eb1f1736b540d175fc9/css/staycations.webflow.aad588e40.min.css"
           rel="stylesheet" type="text/css" />
+
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -76,7 +77,7 @@
                 <nav class="dropdown-list w-dropdown-list">
                     <div class="w-dyn-list">
                         <div role="list" class="nav-dropdown-list w-dyn-items">
-                            <div role="listitem" class="nav-dropdown-item w-dyn-item"><a href="/locations/cornwall"
+                            <div role="listitem" class="nav-dropdown-item w-dyn-item"><a href="user?page=sorting&location"
                                                                                          class="nav-dropdown-link w-inline-block">
                                 <div>Kathmandu</div>
                             </a></div>
@@ -140,19 +141,19 @@
 <div class="home-hero-section">
     <div class="container hero">
         <h1 class="home-hero-h1">Get the Result You Deserve</h1>
-        <div>Popular locations</div>
+        <div>College Finder</div>
         <div class="home-hero-collection-wrapper w-dyn-list">
             <div role="list" class="home-hero-collection-list w-dyn-items">
-                <div role="listitem" class="home-hero-collection-item w-dyn-item"><a href="/locations/kent"
+                <div role="listitem" class="home-hero-collection-item w-dyn-item"><a href="#"
                                                                                      class="popoular-location-link w-inline-block">
-                    <div>Kent</div>
+                    <div>Trust</div>
                 </a></div>
-                <div role="listitem" class="home-hero-collection-item w-dyn-item"><a href="/locations/essex"
+                <div role="listitem" class="home-hero-collection-item w-dyn-item"><a href="#"
                                                                                      class="popoular-location-link w-inline-block">
-                    <div>Essex</div>
+                    <div>Excellence</div>
                 </a></div>
             </div>
-        </div><a href="/locations" class="mini-text-link">Register</a>
+        </div><a href="#" class="mini-text-link">Register</a>
     </div>
 </div>
 
@@ -232,76 +233,23 @@
                 <div role="listitem" class="w-dyn-item">
                     <div class="property-card">
 
-                        <div><a style="background-image:url(&quot;https://assets.website-files.com/602e861b4a61a628c4e2b964/602ebfc1a2085c0e17bb02db_pexels-eneida-nieves-803975.jpg&quot;)"
+                        <div><a style="background-image:url('./images/VirnchiCollege.jpeg')"
                                 href="/property/country-cabin" class="property-card-image w-inline-block">
                             <div class="property-card-from-price-row">
                                 <div class="light-text">FROM</div>
-                                <div>£</div>
-                                <div>220</div>
-                                <div class="light-text">/NIGHT</div>
+                                <div>Rs</div>
+                                <div>82000</div>
+                                <div class="light-text">/Semester</div>
                             </div>
                         </a>
-                            <div class="property-card-title">Country Cabin</div>
-                            <div class="property-card-row"><img
-                                    src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602eae176cde086b839b6408_icons8_navigation_2.svg"
-                                    loading="lazy" alt="Scotland" class="property-card-location-icon" />
-                                <div>Location</div><a href="/locations/scotland"
-                                                      class="property-card-location-link">Scotland</a>
-                            </div>
-                            <p class="property-card-summary">Charming treehouse for two in the Kent countryside.
-                                Feel your cares float away past the tree tops as you relax in the hot tub below.</p>
-                            <div class="property-card-badge-row">
-                                <div class="dog-friendly-badge"><img
-                                        src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602eaef95c26182dc05e02a3_icons8_dog.svg"
-                                        loading="lazy" alt="Dogs Welcome Icon" class="property-card-dog-icon" />
-                                    <div>Dogs welcome</div>
-                                </div>
-                                <div class="max-guest-badge"><img
-                                        src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602ebb213abab23da3d4d2a6_icons8_user_1.svg"
-                                        alt="4" class="property-card-dog-icon" />
-                                    <div>Up to</div>
-                                    <div class="property-card-guest-amount">4</div>
-                                    <div>guests</div>
-                                </div>
-                            </div>
-                            <div class="property-card-subtitle">Features</div>
-                            <div class="property-card-feature-list-wrapper w-dyn-list">
-                                <div role="list" class="property-card-features-list w-dyn-items">
-                                    <div role="listitem" class="property-card-features-item w-dyn-item"><img
-                                            src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea1a09899b5fca343342d_icons8_bathtub.svg"
-                                            loading="lazy" alt="Bath" class="property-card-feature-icon" />
-                                        <div>Bath</div>
-                                    </div>
-                                    <div role="listitem" class="property-card-features-item w-dyn-item"><img
-                                            src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea17fdf00192b0e6e6222_icons8_weber.svg"
-                                            loading="lazy" alt="BBQ" class="property-card-feature-icon" />
-                                        <div>BBQ</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><a href="/property/country-cabin" class="property-card-link">Register</a>
-                    </div>
-                </div>
-                <div role="listitem" class="w-dyn-item">
-                    <div class="property-card">
-                        <div><a style="background-image:url(&quot;https://assets.website-files.com/602e861b4a61a628c4e2b964/6099473e85e1b39147f7debb_pexels-lukas-kloeppel-577697_compressed_compressed.jpg&quot;)"
-                                href="/property/lost-world-log-cabin" class="property-card-image w-inline-block">
-                            <div class="property-card-from-price-row">
-                                <div class="light-text">FROM</div>
-                                <div>£</div>
-                                <div>349</div>
-                                <div class="light-text">/NIGHT</div>
-                            </div>
-                        </a>
-                            <div class="property-card-title">Lost World Log Cabin</div>
+                            <div class="property-card-title">Bachelor & Master</div>
                             <div class="property-card-row"><img
                                     src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602eae176cde086b839b6408_icons8_navigation_2.svg"
                                     loading="lazy" alt="Cornwall" class="property-card-location-icon" />
                                 <div>Location</div><a href="/locations/cornwall"
-                                                      class="property-card-location-link">Cornwall</a>
+                                                      class="property-card-location-link">Manbhawan, lalitpur</a>
                             </div>
-                            <p class="property-card-summary">Charming treehouse for two in the Kent countryside.
-                                Feel your cares float away past the tree tops as you relax in the hot tub below.</p>
+                            <p class="property-card-summary">Virinchi College provide BICT and MBA courses for student in a affordable price as well as high quality education</p>
                             <div class="property-card-badge-row">
                                 <div class="dog-friendly-badge w-condition-invisible"><img
                                         src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602eaef95c26182dc05e02a3_icons8_dog.svg"
@@ -312,84 +260,146 @@
                                         src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602ebb213abab23da3d4d2a6_icons8_user_1.svg"
                                         alt="15" class="property-card-dog-icon" />
                                     <div>Up to</div>
-                                    <div class="property-card-guest-amount">15</div>
-                                    <div>guests</div>
+                                    <div class="property-card-guest-amount">500</div>
+                                    <div>students</div>
                                 </div>
                             </div>
-                            <div class="property-card-subtitle">Features</div>
-                            <div class="property-card-feature-list-wrapper w-dyn-list">
-                                <div role="list" class="property-card-features-list w-dyn-items">
-                                    <div role="listitem" class="property-card-features-item w-dyn-item"><img
-                                            src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea17fdf00192b0e6e6222_icons8_weber.svg"
-                                            loading="lazy" alt="BBQ" class="property-card-feature-icon" />
-                                        <div>BBQ</div>
-                                    </div>
-                                    <div role="listitem" class="property-card-features-item w-dyn-item"><img
-                                            src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea16765a14152c5747b68_icons8_cooker.svg"
-                                            loading="lazy" alt="Cooker" class="property-card-feature-icon" />
-                                        <div>Cooker</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><a href="/property/lost-world-log-cabin" class="property-card-link">Register</a>
-                    </div>
-                </div>
-                <div role="listitem" class="w-dyn-item">
-                    <div class="property-card">
-                        <div><a style="background-image:url(&quot;https://assets.website-files.com/602e861b4a61a628c4e2b964/609654d648a706e8b67a2094_pexels-expect-best-323780.jpg&quot;)"
-                                href="/property/modern-living" class="property-card-image w-inline-block">
-                            <div class="property-card-from-price-row">
-                                <div class="light-text">FROM</div>
-                                <div>£</div>
-                                <div>549</div>
-                                <div class="light-text">/NIGHT</div>
-                            </div>
-                        </a>
-                            <div class="property-card-title">Modern Living</div>
-                            <div class="property-card-row"><img
-                                    src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602eae176cde086b839b6408_icons8_navigation_2.svg"
-                                    loading="lazy" alt="Cornwall" class="property-card-location-icon" />
-                                <div>Location</div><a href="/locations/cornwall"
-                                                      class="property-card-location-link">Cornwall</a>
-                            </div>
-                            <p class="property-card-summary">Charming treehouse for two in the Kent countryside.
-                                Feel your cares float away past the tree tops as you relax in the hot tub below.</p>
-                            <div class="property-card-badge-row">
-                                <div class="dog-friendly-badge w-condition-invisible"><img
-                                        src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602eaef95c26182dc05e02a3_icons8_dog.svg"
-                                        loading="lazy" alt="Dogs Welcome Icon" class="property-card-dog-icon" />
-                                    <div>Dogs welcome</div>
-                                </div>
-                                <div class="max-guest-badge"><img
-                                        src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602ebb213abab23da3d4d2a6_icons8_user_1.svg"
-                                        alt="15" class="property-card-dog-icon" />
-                                    <div>Up to</div>
-                                    <div class="property-card-guest-amount">15</div>
-                                    <div>guests</div>
-                                </div>
-                            </div>
-                            <div class="property-card-subtitle">Features</div>
+                            <div class="property-card-subtitle">Level</div>
                             <div class="property-card-feature-list-wrapper w-dyn-list">
                                 <div role="list" class="property-card-features-list w-dyn-items">
                                     <div role="listitem" class="property-card-features-item w-dyn-item"><img
                                             src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea109b69124c88b0e0cd7_icons8_air_conditioner.svg"
                                             loading="lazy" alt="Air Conditioning"
                                             class="property-card-feature-icon" />
-                                        <div>Air Conditioning</div>
+                                        <div>Bachelors</div>
                                     </div>
                                     <div role="listitem" class="property-card-features-item w-dyn-item"><img
                                             src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea1a09899b5fca343342d_icons8_bathtub.svg"
                                             loading="lazy" alt="Bath" class="property-card-feature-icon" />
-                                        <div>Bath</div>
+                                        <div>Private</div>
                                     </div>
                                     <div role="listitem" class="property-card-features-item w-dyn-item"><img
                                             src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea17fdf00192b0e6e6222_icons8_weber.svg"
                                             loading="lazy" alt="BBQ" class="property-card-feature-icon" />
-                                        <div>BBQ</div>
+                                        <div>Personal development</div>
                                     </div>
                                 </div>
                             </div>
-                        </div><a href="/property/modern-living" class="property-card-link">Register</a>
+                        </div><a href="user?page=gotobook&id=5" class="property-card-link">Register</a>
+                    </div>
+                </div>
+                <div role="listitem" class="w-dyn-item">
+                    <div class="property-card">
+                        <div><a style="background-image:url('./images/VirnchiCollege.jpeg')"
+                                href="/property/lost-world-log-cabin" class="property-card-image w-inline-block">
+                            <div class="property-card-from-price-row">
+                                <div class="light-text">FROM</div>
+                                <div>Rs</div>
+                                <div>82000</div>
+                                <div class="light-text">/Semester</div>
+                            </div>
+                        </a>
+                            <div class="property-card-title">Bachelor & Master</div>
+                            <div class="property-card-row"><img
+                                    src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602eae176cde086b839b6408_icons8_navigation_2.svg"
+                                    loading="lazy" alt="Cornwall" class="property-card-location-icon" />
+                                <div>Location</div><a href="/locations/cornwall"
+                                                      class="property-card-location-link">Manbhawan, lalitpur</a>
+                            </div>
+                            <p class="property-card-summary">Virinchi College provide BICT and MBA courses for student in a affordable price as well as high quality education</p>
+                            <div class="property-card-badge-row">
+                                <div class="dog-friendly-badge w-condition-invisible"><img
+                                        src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602eaef95c26182dc05e02a3_icons8_dog.svg"
+                                        loading="lazy" alt="Dogs Welcome Icon" class="property-card-dog-icon" />
+                                    <div>Dogs welcome</div>
+                                </div>
+                                <div class="max-guest-badge"><img
+                                        src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602ebb213abab23da3d4d2a6_icons8_user_1.svg"
+                                        alt="15" class="property-card-dog-icon" />
+                                    <div>Up to</div>
+                                    <div class="property-card-guest-amount">500</div>
+                                    <div>students</div>
+                                </div>
+                            </div>
+                            <div class="property-card-subtitle">Level</div>
+                            <div class="property-card-feature-list-wrapper w-dyn-list">
+                                <div role="list" class="property-card-features-list w-dyn-items">
+                                    <div role="listitem" class="property-card-features-item w-dyn-item"><img
+                                            src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea109b69124c88b0e0cd7_icons8_air_conditioner.svg"
+                                            loading="lazy" alt="Air Conditioning"
+                                            class="property-card-feature-icon" />
+                                        <div>Bachelors</div>
+                                    </div>
+                                    <div role="listitem" class="property-card-features-item w-dyn-item"><img
+                                            src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea1a09899b5fca343342d_icons8_bathtub.svg"
+                                            loading="lazy" alt="Bath" class="property-card-feature-icon" />
+                                        <div>Private</div>
+                                    </div>
+                                    <div role="listitem" class="property-card-features-item w-dyn-item"><img
+                                            src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea17fdf00192b0e6e6222_icons8_weber.svg"
+                                            loading="lazy" alt="BBQ" class="property-card-feature-icon" />
+                                        <div>Personal development</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><a href="user?page=gotobook&id=5" class="property-card-link">Register</a>
+                    </div>
+                </div>
+                <div role="listitem" class="w-dyn-item">
+                    <div class="property-card">
+                        <div><a style="background-image:url('./images/VirnchiCollege.jpeg')"
+                                href="/property/modern-living" class="property-card-image w-inline-block">
+                            <div class="property-card-from-price-row">
+                                <div class="light-text">FROM</div>
+                                <div>Rs</div>
+                                <div>82000</div>
+                                <div class="light-text">/Semester</div>
+                            </div>
+                        </a>
+                            <div class="property-card-title">Bachelor & Master</div>
+                            <div class="property-card-row"><img
+                                    src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602eae176cde086b839b6408_icons8_navigation_2.svg"
+                                    loading="lazy" alt="Cornwall" class="property-card-location-icon" />
+                                <div>Location</div><a href="/locations/cornwall"
+                                                      class="property-card-location-link">Manbhawan, lalitpur</a>
+                            </div>
+                            <p class="property-card-summary">Virinchi College provide BICT and MBA courses for student in a affordable price as well as high quality education</p>
+                            <div class="property-card-badge-row">
+                                <div class="dog-friendly-badge w-condition-invisible"><img
+                                        src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602eaef95c26182dc05e02a3_icons8_dog.svg"
+                                        loading="lazy" alt="Dogs Welcome Icon" class="property-card-dog-icon" />
+                                    <div>Dogs welcome</div>
+                                </div>
+                                <div class="max-guest-badge"><img
+                                        src="https://assets.website-files.com/602e6eb1f1736b540d175fc9/602ebb213abab23da3d4d2a6_icons8_user_1.svg"
+                                        alt="15" class="property-card-dog-icon" />
+                                    <div>Up to</div>
+                                    <div class="property-card-guest-amount">500</div>
+                                    <div>students</div>
+                                </div>
+                            </div>
+                            <div class="property-card-subtitle">Level</div>
+                            <div class="property-card-feature-list-wrapper w-dyn-list">
+                                <div role="list" class="property-card-features-list w-dyn-items">
+                                    <div role="listitem" class="property-card-features-item w-dyn-item"><img
+                                            src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea109b69124c88b0e0cd7_icons8_air_conditioner.svg"
+                                            loading="lazy" alt="Air Conditioning"
+                                            class="property-card-feature-icon" />
+                                        <div>Bachelors</div>
+                                    </div>
+                                    <div role="listitem" class="property-card-features-item w-dyn-item"><img
+                                            src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea1a09899b5fca343342d_icons8_bathtub.svg"
+                                            loading="lazy" alt="Bath" class="property-card-feature-icon" />
+                                        <div>Private</div>
+                                    </div>
+                                    <div role="listitem" class="property-card-features-item w-dyn-item"><img
+                                            src="https://assets.website-files.com/602e861b4a61a628c4e2b964/602ea17fdf00192b0e6e6222_icons8_weber.svg"
+                                            loading="lazy" alt="BBQ" class="property-card-feature-icon" />
+                                        <div>Personal development</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><a href="user?page=gotobook&id=5" class="property-card-link">Register</a>
                     </div>
                 </div>
             </div>

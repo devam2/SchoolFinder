@@ -10,6 +10,7 @@ import java.util.List;
 import DBConnection.DBConnection;
 import Hashing.HashPassword;
 import Model.Student;
+import Service.AdminService;
 import Service.UserService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -222,7 +223,7 @@ public class UserController extends HttpServlet {
 
 
 //        To goto manage registration
-        if (action.equalsIgnoreCase("managepackage")) {
+        if (action.equalsIgnoreCase("manageregister")) {
             RequestDispatcher rd = request.getRequestDispatcher("User_Page/manageRegister.jsp");
             rd.forward(request, response);
         }
@@ -323,12 +324,12 @@ public class UserController extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id"));
             Student student = new Student();
 
-            student.setUserName(request.getParameter("Name"));
-            student.setSchoolname(request.getParameter("Schoolname"));
+            student.setUserName(request.getParameter("name"));
+            student.setSchoolname(request.getParameter("schoolname"));
             student.setEmail(request.getParameter("email"));
-            student.setAddress(request.getParameter("Address"));
-            student.setEducationlvl(request.getParameter("Educationlvl"));
-            student.setPassedouyear(request.getParameter("paasedoutyear"));
+            student.setAddress(request.getParameter("address"));
+            student.setEducationlvl(request.getParameter("educationlvl"));
+            student.setPassedouyear(request.getParameter("passedoutyear"));
             student.setMarks(request.getParameter("marks"));
             student.setNewschoolName(request.getParameter("newSchoolName"));
             student.setLevel(request.getParameter("level"));
@@ -357,6 +358,7 @@ public class UserController extends HttpServlet {
 
 
             System.out.println(newseat);
+            System.out.println(id);
 
 //            this is used to insert data in database
             new UserService().insertBookingDetails(student);
@@ -377,6 +379,37 @@ public class UserController extends HttpServlet {
 
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
             requestDispatcher.forward(request, response);
+        }
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+//   ------------------------------------------------------------------------------------------------------------------------------------
+
+        // this is for sorting the college by location of kathmandu
+
+        if (action.equalsIgnoreCase("sorting")) {
+//            String location = request.getParameter("query");
+//            List<Student> searchResults = UserService.sortcollege(location);
+//            request.setAttribute("ubasearchResults", searchResults);
+//            request.setAttribute("author", author);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("User_Page/filterlocationKtm.jsp");
+            dispatcher.forward(request, response);
+        }
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+
+//   ------------------------------------------------------------------------------------------------------------------------------------
+
+        // this is for going to allcolleges page
+
+        if (action.equalsIgnoreCase("allcolleges")) {
+//            String location = request.getParameter("query");
+//            List<Student> searchResults = UserService.sortcollege(location);
+//            request.setAttribute("ubasearchResults", searchResults);
+//            request.setAttribute("author", author);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("User_Page/Allcolleges.jsp");
+            dispatcher.forward(request, response);
         }
 
 //------------------------------------------------------------------------------------------------------------------------------
@@ -409,10 +442,52 @@ public class UserController extends HttpServlet {
         }
 
 
-    }
+
 
 //------------------------------------------------------------------------------------------------------------------------------
 
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+          if (action.equalsIgnoreCase("changepassword")) {
+
+        RequestDispatcher rd = request.getRequestDispatcher("User_Page/changepassword.jsp");
+        rd.forward(request, response);
+
+    }
+
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
+
+        // for changing password
+        if (action.equalsIgnoreCase("changingpassword")) {
+            Student student = new Student();
+            HttpSession session = request.getSession();
+            String email = (String) session.getAttribute("email");
+            student.setPassword((request.getParameter("oldpassword")));
+            student.setNewpassword((request.getParameter("newpassword")));
+            new UserService().changePassword(student, email);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+            requestDispatcher.forward(request, response);
+
+        }
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+    }
 
 
     public void destroy() {
