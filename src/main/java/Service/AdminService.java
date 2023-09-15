@@ -78,7 +78,7 @@ public class AdminService {
     }
 
 
-    public HashMap<String, Object> showschool(Student student) throws SQLException {
+    public HashMap<String, Object> showschool(Student student) throws SQLException, IOException {
         HashMap<String, Object> details = new HashMap<>();
         String base64Image = "";
 
@@ -88,8 +88,10 @@ public class AdminService {
 
         ResultSet rs = selectPS.executeQuery();
         if (rs.next()) {
-            // Read the image data into a byte array
-            byte[] fileContent = rs.getBytes("image");
+            String filePath = rs.getString("image");
+            File file = new File(filePath);
+            byte[] fileContent = Files.readAllBytes(file.toPath());
+            System.out.println(filePath);
 
             // Convert the byte array to a base64 string
             base64Image = Base64.getEncoder().encodeToString(fileContent);
@@ -97,9 +99,9 @@ public class AdminService {
             // Add the college details to the HashMap
             String name = rs.getString("Name");
             String location = rs.getString("Location");
-            double fee = rs.getDouble("Fee");
+            String fee = rs.getString("Fee");
             int seat = rs.getInt("Seat");
-            double scholarship = rs.getDouble("Scholarship");
+            String scholarship = rs.getString("Scholarship");
             String level = rs.getString("Level");
             String faculty = rs.getString("Faculty");
             String admissionDate = rs.getString("Admission_Date");
@@ -117,11 +119,15 @@ public class AdminService {
             details.put("admissionDeadline", admissionDeadline);
             details.put("type", type);
             details.put("image", base64Image);
+            System.out.println(base64Image);
         }
 
         return details;
 
 
+
+
+        }
 
 //        this can be used to make sure that only 4 element is seen
 //        public HashMap<String, Object> showProperties() throws SQLException {
@@ -151,7 +157,7 @@ public class AdminService {
 //            return propertyDetails;
 //        }
 
-    }
+
 
     // this for showing the list of packages in the manage policy
     public List<Student> showbooking() {

@@ -398,6 +398,36 @@ public class UserController extends HttpServlet {
 
 //------------------------------------------------------------------------------------------------------------------------------
 
+//   ------------------------------------------------------------------------------------------------------------------------------------
+
+        // this is for sorting the college by location of lalitpur
+
+        if (action.equalsIgnoreCase("sorting1")) {
+//            String location = request.getParameter("query");
+//            List<Student> searchResults = UserService.sortcollege(location);
+//            request.setAttribute("ubasearchResults", searchResults);
+//            request.setAttribute("author", author);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("User_Page/filterlocationlalitpur.jsp");
+            dispatcher.forward(request, response);
+        }
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+//   ------------------------------------------------------------------------------------------------------------------------------------
+
+        // this is for sorting the college by location of Bhaktapur
+
+        if (action.equalsIgnoreCase("sorting2")) {
+//            String location = request.getParameter("query");
+//            List<Student> searchResults = UserService.sortcollege(location);
+//            request.setAttribute("ubasearchResults", searchResults);
+//            request.setAttribute("author", author);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("User_Page/filterlocationBhaktapur.jsp");
+            dispatcher.forward(request, response);
+        }
+
+//------------------------------------------------------------------------------------------------------------------------------
+
 
 //   ------------------------------------------------------------------------------------------------------------------------------------
 

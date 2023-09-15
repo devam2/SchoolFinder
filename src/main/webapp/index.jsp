@@ -77,15 +77,15 @@
                 <nav class="dropdown-list w-dropdown-list">
                     <div class="w-dyn-list">
                         <div role="list" class="nav-dropdown-list w-dyn-items">
-                            <div role="listitem" class="nav-dropdown-item w-dyn-item"><a href="user?page=sorting&location"
+                            <div role="listitem" class="nav-dropdown-item w-dyn-item"><a href="user?page=sorting"
                                                                                          class="nav-dropdown-link w-inline-block">
                                 <div>Kathmandu</div>
                             </a></div>
-                            <div role="listitem" class="nav-dropdown-item w-dyn-item"><a href="/locations/essex"
+                            <div role="listitem" class="nav-dropdown-item w-dyn-item"><a href="user?page=sorting1"
                                                                                          class="nav-dropdown-link w-inline-block">
                                 <div>Lalitpur</div>
                             </a></div>
-                            <div role="listitem" class="nav-dropdown-item w-dyn-item"><a href="/locations/kent"
+                            <div role="listitem" class="nav-dropdown-item w-dyn-item"><a href="user?page=sorting2"
                                                                                          class="nav-dropdown-link w-inline-block">
                                 <div>Bhaktapur</div>
                             </a></div>
@@ -94,7 +94,7 @@
 <%--                                <div>Master</div>--%>
 <%--                            </a></div>--%>
                         </div>
-                    </div><a href="/locations" class="dropdown-link w-dropdown-link">See all locations +</a>
+                    </div><a href="user?page=allcolleges" class="dropdown-link w-dropdown-link">See all locations +</a>
                 </nav>
             </div><a href="#collections" class="nav-link w-nav-link">Collections</a><a href="/properties"
                                                                                        class="nav-link w-nav-link">Properties</a>
@@ -153,7 +153,7 @@
                     <div>Excellence</div>
                 </a></div>
             </div>
-        </div><a href="#" class="mini-text-link">Register</a>
+        </div><a href="user?page=allcolleges" class="mini-text-link">All Colleges</a>
     </div>
 </div>
 
@@ -163,23 +163,22 @@
 <%--        <div class="w-dyn-list">--%>
 <%--            <div role="list" class="home-intro-property-list w-dyn-items">--%>
 <%--                <!-- Replace this code block with your Java code to fetch and iterate through the colleges -->--%>
-<%--&lt;%&ndash;                &lt;%&ndash;%>--%>
-<%--&lt;%&ndash;                    UserService userService = new UserService();&ndash;%&gt;--%>
-<%--&lt;%&ndash;                    HashMap<String, Object> featuredColleges = userService.getFeaturedColleges();&ndash;%&gt;--%>
-<%--&lt;%&ndash;                    for (int i = 0; i < 3; i++) {&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        int id = (int) featuredColleges.get("id" + i);&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        String name = (String) featuredColleges.get("Name" + i);&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        String image = (String) featuredColleges.get("Image" + i);&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        String location = (String) featuredColleges.get("Location" + i);&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        String fee = (String) featuredColleges.get("Fee" + i);&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        int seat = (int) featuredColleges.get("Seat" + i);&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        String scholarship = (String) featuredColleges.get("Scholarship" + i);&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        String level = (String) featuredColleges.get("Level" + i);&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        String faculty = (String) featuredColleges.get("Faculty" + i);&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        String admissionDate = (String) featuredColleges.get("Admission_Date" + i);&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        String type = (String) featuredColleges.get("Type" + i);&ndash;%&gt;--%>
-<%--&lt;%&ndash;                        String admissionDeadline = (String) featuredColleges.get("Admission_Deadline" + i);&ndash;%&gt;--%>
-<%--&lt;%&ndash;                %>&ndash;%&gt;--%>
+
+<%--         UserService userService = new UserService(); HashMap<String, Object> featuredColleges = userService.getFeaturedColleges();--%>
+<%--                    for (int i = 0; i < 3; i++) {--%>
+<%--                        int id = (int) featuredColleges.get("id" + i);--%>
+<%--                        String name = (String) featuredColleges.get("Name" + i);--%>
+<%--                        String image = (String) featuredColleges.get("Image" + i);--%>
+<%--                        String location = (String) featuredColleges.get("Location" + i);--%>
+<%--                        String fee = (String) featuredColleges.get("Fee" + i);--%>
+<%--                        int seat = (int) featuredColleges.get("Seat" + i);--%>
+<%--                        String scholarship = (String) featuredColleges.get("Scholarship" + i);--%>
+<%--                        String level = (String) featuredColleges.get("Level" + i);--%>
+<%--                        String faculty = (String) featuredColleges.get("Faculty" + i);--%>
+<%--                        String admissionDate = (String) featuredColleges.get("Admission_Date" + i);--%>
+<%--                        String type = (String) featuredColleges.get("Type" + i);--%>
+<%--                        String admissionDeadline = (String) featuredColleges.get("Admission_Deadline" + i);--%>
+<%--                %>--%>
 <%--                <div role="listitem" class="w-dyn-item">--%>
 <%--                    <div class="property-card">--%>
 <%--                        <div>--%>

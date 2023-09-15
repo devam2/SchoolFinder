@@ -129,11 +129,13 @@ public class AdminController extends HttpServlet {
             }
             request.setAttribute("details", details);
 
-            RequestDispatcher rd = request.getRequestDispatcher("admin/seeclaim.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("Admin_Page/test.jsp");
             rd.forward(request, response);
 
 
         }
+
+
 
         // this is for updating the detail of school
 //        if (action.equalsIgnoreCase("userEdit")) {

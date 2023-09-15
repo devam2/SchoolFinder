@@ -232,52 +232,131 @@ public class UserService {
 //------------------------------------------------------------------------------------------------------------------------------
 
     // this is for getting the details for index page and showing images
-    public HashMap<String, Object> getFeaturedColleges() throws SQLException, IOException {
-        int limit = 3; // Fixed limit of 3
-        HashMap<String, Object> details = new HashMap<>();
+//    public HashMap<String, Object> getFeaturedColleges() throws SQLException, IOException {
+////        int limit = 3; // Fixed limit of 3
+//        HashMap<String, Object> details = new HashMap<>();
+//
+//        // Retrieve the college details with a limit
+////        String query = "SELECT id, Location, Fee, Seat, Scholarship, Level, Faculty, Admission_Date, Type, Name, Admission_Deadline, image FROM college ";
+//////        String query = "SELECT id, Location, Fee, Seat, Scholarship, Level, Faculty, Admission_Date, Type, Name, Admission_Deadline, image FROM college ORDER BY count DESC LIMIT ?";
+////        PreparedStatement ps = new DBConnection().getStatement(query);
+////        ps.setInt(1, limit);  // Set the limit as a parameter
+////        ResultSet rs = ps.executeQuery();
+//
+//        // Retrieve all college details
+//        String query = "SELECT id, Location, Fee, Seat, Scholarship, Level, Faculty, Admission_Date, Type, Name, Admission_Deadline, image FROM college ";
+//
+//
+////        Connection connection = null;
+////        PreparedStatement ps = null;
+////        ResultSet rs = null;
+//
+//        try {
+//            PreparedStatement ps = new DBConnection().getStatement(query);
+//            ResultSet rs = ps.executeQuery();
+//
+////            int i = 0;
+//            while (rs.next()) {
+//                // Retrieve college details for the current row
+//                int id = rs.getInt("id");
+//                String location = rs.getString("Location");
+//                String fee = rs.getString("Fee");
+//                int seat = rs.getInt("Seat");
+//
+//                String scholarship = rs.getString("Scholarship");
+//                String level = rs.getString("Level");
+//                String faculty = rs.getString("Faculty");
+//                String admissionDate = rs.getString("Admission_Date");
+//                String type = rs.getString("Type");
+//                String name = rs.getString("Name");
+//                String admissionDeadline = rs.getString("Admission_Deadline");
+//                String image = rs.getString("image"); // Assuming it's a base64 encoded image
+//
+//                // Add the college details to the HashMap
+//                details.put("id" , id);
+//                details.put("Location" , location);
+//                details.put("Fee" , fee);
+//                details.put("Seat" , seat);
+//                details.put("Scholarship" , scholarship);
+//                details.put("Level" , level);
+//                details.put("Faculty" , faculty);
+//                details.put("Admission_Date" , admissionDate);
+//                details.put("Type" , type);
+//                details.put("Name" , name);
+//                details.put("Admission_Deadline" , admissionDeadline);
+////                details.put("Image" , image); // Assuming it's a base64 encoded image  details.put("id" + i, id);
+////                details.put("Location" + i, location);
+////                details.put("Fee" + i, fee);
+////                details.put("Seat" + i, seat);
+////                details.put("Scholarship" + i, scholarship);
+////                details.put("Level" + i, level);
+////                details.put("Faculty" + i, faculty);
+////                details.put("Admission_Date" + i, admissionDate);
+////                details.put("Type" + i, type);
+////                details.put("Name" + i, name);
+////                details.put("Admission_Deadline" + i, admissionDeadline);
+////                details.put("Image" + i, image); // Assuming it's a base64 encoded image
+//
+////                i++;
+//            }
+//
+////            return details;
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return details;
+//    }
 
-        // Retrieve the college details with a limit
-        String query = "SELECT id, Location, Fee, Seat, Scholarship, Level, Faculty, Admission_Date, Type, Name, Admission_Deadline, image FROM college ORDER BY count DESC LIMIT ?";
-        PreparedStatement ps = new DBConnection().getStatement(query);
-        ps.setInt(1, limit);  // Set the limit as a parameter
-        ResultSet rs = ps.executeQuery();
 
-        int i = 0;
-        while (rs.next()) {
-            // Retrieve college details for the current row
-            int id = rs.getInt("id");
-            String location = rs.getString("Location");
-            String fee = rs.getString("Fee");
-            int seat = rs.getInt("Seat");
+    public List<Map<String, Object>> getFeaturedColleges() throws SQLException, IOException {
+        List<Map<String, Object>> collegeList = new ArrayList<>();
 
-            String scholarship = rs.getString("Scholarship");
-            String level = rs.getString("Level");
-            String faculty = rs.getString("Faculty");
-            String admissionDate = rs.getString("Admission_Date");
-            String type = rs.getString("Type");
-            String name = rs.getString("Name");
-            String admissionDeadline = rs.getString("Admission_Deadline");
-            String image = rs.getString("image"); // Assuming it's a base64 encoded image
+        // Retrieve all college details
+        String query = "SELECT id, Location, Fee, Seat, Scholarship, Level, Faculty, Admission_Date, Type, Name, Admission_Deadline, image FROM college ";
 
-            // Add the college details to the HashMap
-            details.put("id" + i, id);
-            details.put("Location" + i, location);
-            details.put("Fee" + i, fee);
-            details.put("Seat" + i, seat);
-            details.put("Scholarship" + i, scholarship);
-            details.put("Level" + i, level);
-            details.put("Faculty" + i, faculty);
-            details.put("Admission_Date" + i, admissionDate);
-            details.put("Type" + i, type);
-            details.put("Name" + i, name);
-            details.put("Admission_Deadline" + i, admissionDeadline);
-            details.put("Image" + i, image); // Assuming it's a base64 encoded image
+        try {
+            PreparedStatement ps = new DBConnection().getStatement(query);
+            ResultSet rs = ps.executeQuery();
 
-            i++;
+            while (rs.next()) {
+                Map<String, Object> collegeDetails = new HashMap<>();
+                // Retrieve college details for the current row
+                int id = rs.getInt("id");
+                String location = rs.getString("Location");
+                String fee = rs.getString("Fee");
+                int seat = rs.getInt("Seat");
+                String scholarship = rs.getString("Scholarship");
+                String level = rs.getString("Level");
+                String faculty = rs.getString("Faculty");
+                String admissionDate = rs.getString("Admission_Date");
+                String type = rs.getString("Type");
+                String name = rs.getString("Name");
+                String admissionDeadline = rs.getString("Admission_Deadline");
+                String image = rs.getString("image"); // Assuming it's a base64 encoded image
+
+                // Add the college details to the list
+                collegeDetails.put("id", id);
+                collegeDetails.put("Location", location);
+                collegeDetails.put("Fee", fee);
+                collegeDetails.put("Seat", seat);
+                collegeDetails.put("Scholarship", scholarship);
+                collegeDetails.put("Level", level);
+                collegeDetails.put("Faculty", faculty);
+                collegeDetails.put("Admission_Date", admissionDate);
+                collegeDetails.put("Type", type);
+                collegeDetails.put("Name", name);
+                collegeDetails.put("Admission_Deadline", admissionDeadline);
+                collegeDetails.put("Image", image); // Include the image data
+
+                collegeList.add(collegeDetails);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
-        return details;
+        return collegeList;
     }
+
+
 
 //------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------
@@ -424,6 +503,76 @@ public class UserService {
          System.out.println("getBookListbyNew");
          List<Student> bookLists = new ArrayList<>();
          String query = "select * from college Where Location = 'katmandu';";
+         System.out.println(query);
+         PreparedStatement pstm = new DBConnection().getStatement(query);
+         try {
+             ResultSet rs = pstm.executeQuery();
+             while (rs.next()) {
+                 Student student = new Student();
+                 student.setId(rs.getInt("id"));
+                 student.setSchoolname(rs.getString("Name"));
+                 student.setLocation(rs.getString("Location"));
+                 student.setFee(rs.getString("Fee"));
+                 student.setSeat(rs.getInt("Seat"));
+                 student.setScholarship(rs.getString("Scholarship"));
+                 student.setLevel(rs.getString("Level"));
+                 student.setFaculty(rs.getString("Faculty"));
+                 student.setAdmissiondate(rs.getString("Admission_Date"));
+                 student.setAdmissiondeadline(rs.getString("Admission_Deadline"));
+                 student.setType(rs.getString("Type"));
+                 bookLists.add(student);
+             }
+             System.out.println("bookList.size()" + bookLists.size());
+         } catch (SQLException e) {
+             e.printStackTrace();
+         }
+         return bookLists;
+     }
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+     // to change college by location lalitpur
+     public List<Student> getloclalitpur() {
+         System.out.println("getBookListbyNew");
+         List<Student> bookLists = new ArrayList<>();
+         String query = "select * from college Where Location = 'lalitpur';";
+         System.out.println(query);
+         PreparedStatement pstm = new DBConnection().getStatement(query);
+         try {
+             ResultSet rs = pstm.executeQuery();
+             while (rs.next()) {
+                 Student student = new Student();
+                 student.setId(rs.getInt("id"));
+                 student.setSchoolname(rs.getString("Name"));
+                 student.setLocation(rs.getString("Location"));
+                 student.setFee(rs.getString("Fee"));
+                 student.setSeat(rs.getInt("Seat"));
+                 student.setScholarship(rs.getString("Scholarship"));
+                 student.setLevel(rs.getString("Level"));
+                 student.setFaculty(rs.getString("Faculty"));
+                 student.setAdmissiondate(rs.getString("Admission_Date"));
+                 student.setAdmissiondeadline(rs.getString("Admission_Deadline"));
+                 student.setType(rs.getString("Type"));
+                 bookLists.add(student);
+             }
+             System.out.println("bookList.size()" + bookLists.size());
+         } catch (SQLException e) {
+             e.printStackTrace();
+         }
+         return bookLists;
+     }
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+     // to change college by location bhaktapur
+     public List<Student> getlocbhaktapur() {
+         System.out.println("getBookListbyNew");
+         List<Student> bookLists = new ArrayList<>();
+         String query = "select * from college Where Location = 'Bhaktapur';";
          System.out.println(query);
          PreparedStatement pstm = new DBConnection().getStatement(query);
          try {
